@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="../js/controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+
+	<div ng-app="geisonApp" ng-controller="myCtrl">
+
+		<div id="topBar">
+			<div id="topBarSub">
+				<div id="divTopBarLeft">
+						<a href="#"> <img id="imgDiarion" src="../img/diarion.png"></a>
+						<a class="links-menu" href="#">CURSOS</a>
+						<a class="links-menu" href="#">CALENDÁRIO</a>
+						<a class="links-menu" href="#">GRUPOS DE DISCUSSÃO </a>
+				</div>
+				<div id="divTopBarRight">
+					<p id="userName">Jaime Schettini</p>
+					<img id="imgNotification" src="../img/notification-bell.png"> 
+					<img id="imgUser" src="../img/user.jpg">
+				</div>
+			</div>
+		</div>
+		<div id="secondBar">
+			<div id="secondBarSub"> 
+				<p>Matemática 6ª série | Frequência </p>
+			</div>
+		</div>
+		<div id="tableDiv">
+			<table>
+				<tbody>
+					<tr>
+						<td id="arrowsCell">
+							<div id="arrowsDiv">
+								<img id="leftArrow" src="../img/left-arrow.png"> 
+								<img id="rightArrow" src="../img/right-arrow.png">
+							</div>
+						</td>
+						<td id="dateHeader" class="centerCell" ng-repeat="lesson in lessons">
+							<div id="dayMonth">{{lesson.startDate | date : "dd/MM"}}</div>
+							<div id="startEndHour">{{lesson.startDate | date : "hh:mm"}} - {{lesson.endDate | date : "hh:mm"}}</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td id="emptyCell"></td>
+						<td class="allChecked" ng-repeat="lesson in lessons">
+							<div ng-click="checkAll(lesson.id, true)" ng-if="areAllChecked(lesson.id) == true">
+								<img id="imgAllChecked" ng-src="../img/all-checked.png">
+							</div>
+							<div ng-click="checkAll(lesson.id, false)" ng-if="areAllChecked(lesson.id) == false">
+								<img id="imgAllUnchecked" ng-src="../img/all-unchecked.png">
+							</div>
+							<div ng-click="checkAll(lesson.id, null)" ng-if="areAllChecked(lesson.id) == null">
+								<img id="imgAllIndeterminate" ng-src="../img/all-indeterminate.png">
+							</div>
+						</td>
+					</tr>
+					<tr ng-repeat="student in students">
+						<td><img id="studentIcon" src="../img/student.png">
+							<p class="ng-binding" id="studentText">{{student.name}}</p>
+						</td>
+
+						<td ng-repeat="lesson in lessons" class="centerCell">
+							<div ng-click="toggle(true, student.id,lesson.id)" ng-if="isAttending(student.id,lesson.id) == true">
+								<img id="imgChecked" ng-src="../img/checked.png">
+							</div>
+							<div ng-click="toggle(false, student.id,lesson.id)"	ng-if="isAttending(student.id,lesson.id) == false">
+								<img id="imgUnchecked" ng-src="../img/unchecked.png">
+							</div>
+							<div ng-click="toggle(null, student.id,lesson.id)" ng-if="isAttending(student.id,lesson.id) == null">
+								<img id="imgIndeterminate" ng-src="../img/indeterminate.png">
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

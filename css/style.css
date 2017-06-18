@@ -1,0 +1,173 @@
+body {
+	background-color: #f7f7f7;
+	margin: 0;
+}
+/* Testando uma coisa nova */
+
+/* Barra do menu do topo */
+
+#topBar {
+	background-color: white;
+	color: grey;
+	display: flex;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: 100;
+	height: 43px;
+    justify-content: center;
+}
+
+#topBarSub{
+    display: flex;
+	width: 60%;
+}
+
+#divTopBarLeft {
+    align-items: center;
+	display: flex;
+    justify-content: center;
+}
+
+#divTopBarRight {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin-left: auto;
+}
+
+.links-menu{
+    color: grey;
+	padding-left: 25px;
+    text-decoration: none;
+}
+
+#imgNotification {
+	padding-left: 10px;
+	padding-right: 11px;
+	width: 10%;
+}
+
+#imgUser {
+	border-radius: 55%;
+    width: 18%;
+}
+
+/* Barra do menu selecionado */
+
+#secondBar {
+	align-items:center;
+	background-color: #5cc8ec;
+	color: white;
+	display:flex;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: arial;
+	height: 60px;
+	justify-content:center;
+}
+
+#secondBarSub{
+	font-size: 15px;
+	width:60%;
+}
+
+/* Tabela de presenças */
+
+#tableDiv{
+	display:flex;
+	justify-content:center;
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 1%;
+	width: 60%;
+}
+
+table, th, td {
+	border: 1px solid #ebebeb;
+}
+
+.centerCell{
+	padding-top: 8px;
+    padding-bottom: 8px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.allChecked{
+	padding-top: 6px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+img#imgUnchecked, #imgChecked, #imgIndeterminate {
+	vertical-align: middle;
+}
+
+#dateHeader {
+	color: grey;
+	font-family: arial;
+}
+
+#dayMonth {
+	font-size: 14px;
+}
+
+#startEndHour {
+	font-size: 12px;
+}
+
+#leftArrow {
+	border: 1px solid #ebebeb;
+	padding: 3px;
+}
+
+#rightArrow {
+	border: 1px solid #ebebeb;
+	padding: 3px;
+	margin-left: -8px;
+}
+
+#arrowsCell {
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	width: 38%;
+	white-space: nowrap;
+}
+
+#arrowsDiv {
+	float: right;
+	margin-right: 1px;
+	margin-bottom: -3px;
+	margin-top: -2px;
+}
+
+#studentIcon {
+	margin-left:10px;
+	margin-right:10px;
+	vertical-align:middle;
+}
+
+#studentText {
+	color: grey;
+	display: inline;
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	position: relative;
+    top: 4px;
+}
+
+/* Gerais */
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+img{
+	cursor: pointer;
+}
+
+links-menu:hover{
+	color:green;
+}
